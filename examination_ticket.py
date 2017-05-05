@@ -20,9 +20,12 @@ questions_1 = __get_questions('q1.txt')
 questions_2 = __get_questions('q2.txt')
 questions_3 = __get_questions('q3.txt')
 
-ticket_count = max(len(questions_1), len(questions_2), len(questions_3))
+tickets_count = max(len(questions_1), len(questions_2), len(questions_3))
+min_tickets_count = 35
+if tickets_count < min_tickets_count:
+    tickets_count = min_tickets_count
 
-for ticket_number in range(0, ticket_count):
+for ticket_number in range(0, tickets_count):
     q1 = __get_question(questions_1, ticket_number)
     q2 = __get_question(questions_2, ticket_number)
     q3 = __get_question(questions_3, ticket_number)
